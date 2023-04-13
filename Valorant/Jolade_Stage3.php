@@ -1,22 +1,6 @@
 <?php
-<<<<<<< HEAD
 
 require 'database.php';
-=======
-include 'Jolade_Capstone.php';
-
-$database = 'sql9604955'; 
-$host = 'sql9.freemysqlhosting.net';
-
-$mysqli = new mysqli($host, $db_user, $db_pass, $database);
-
-
-if ($mysqli->connect_error) {
-    die('Connect Error (' .
-    $mysqli->connect_errno . ') '.
-    $mysqli->connect_error);
-}
->>>>>>> 6654af5d5516857e8d4edee71369506ff2579755
 
 $sql = " SELECT * FROM valorant";
 $result = $mysqli->query($sql);
