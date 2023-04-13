@@ -1,8 +1,6 @@
 <?php
 
-require 'database.php';
-
-$url = 'https://na.api.riotgames.com/val/content/v1/contents?api_key=RGAPI-d23ad927-7c30-49d9-9a2a-11892cc62067';
+$url = 'https://na.api.riotgames.com/val/content/v1/contents?api_key=RGAPI-318f260f-b696-46dc-8226-a75d4e152871';
   
 $curl = curl_init($url);
 
@@ -17,6 +15,18 @@ curl_close($curl);
 //$dsn = 'mysql:host=localhost;dbname=valorant';
 //$username = 'root';
 //$password = '';
+$db_host = "mysql:host=sql9.freemysqlhosting.net;dbname=sql9604955";
+$db_user = "sql9604955";
+$db_pass = "hXgfF5mzzg"; 
+
+	try {
+		$db = new PDO($db_host, $db_user, $db_pass);
+	} catch (PDOException $e) {
+		$error_message = $e->getMessage();
+		print($error_message);
+		
+		exit();
+	}
 
 $getAgent = $response['characters'];
 $agent = [];
